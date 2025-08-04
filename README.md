@@ -1,39 +1,94 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# form_helper
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+A Dart-only utility package that provides validation for common form fields such as email, password, phone number, name, OTP, username, and more — with support for customizable error messages.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+Useful in any Flutter app that uses `TextFormField`, especially in forms for login, signup, or input verification.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
 
-## Features
+## ✨ Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+✅ Validate:
+- Email  
+- Password (with min length)  
+- Confirm password  
+- Phone number  
+- Name  
+- Username  
+- OTP (custom length)  
+- Generic non-empty fields
 
-## Getting started
+✅ Fully customizable error messages
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+✅ Dart-only — no Flutter SDK dependency
 
-## Usage
+✅ Plug-and-play with `TextFormField.validator`
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+---
 
-```dart
-const like = 'sample';
+## 🚀 Getting Started
+
+In your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  form_helper: 
 ```
 
-## Additional information
+## import using
+```dart
+import 'package:form_validator_helper/form_validator_helper.dart';
+```
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Examples
+
+```dart
+
+TextFormField(
+  validator: (val) => FormValidator.validateEmail(
+    val,
+    requiredMessage: 'Email is required.',
+    invalidMessage: 'Please enter a valid email.',
+  ),
+)
+
+TextFormField(
+  validator: (val) => FormValidator.validatePassword(
+    val,
+    minLength: 8,
+    requiredMessage: 'Enter a password',
+    lengthMessage: 'Password must be at least {minLength} characters long.',
+  ),
+)
+
+
+TextFormField(
+  validator: (val) => FormValidator.validateName(
+    val,
+    invalidMessage: 'Name should contain only letters.',
+  ),
+)
+
+
+TextFormField(
+  validator: (val) => FormValidator.validateUsername(
+    val,
+    invalidMessage: 'Username must be at least 3 characters and alphanumeric.',
+  ),
+)
+
+
+```
+
+## 💡 Best Practices
+Use with Form and TextFormField for seamless validation
+
+Works naturally with FormState.validate()
+
+Error messages are localized-friendly — just pass your own messages
+
+## Author
+
+Made with ❤️ by Yash Sharma
+Open to contributions and feature requests.
+
+

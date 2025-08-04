@@ -1,10 +1,4 @@
 class FormValidator {
-  static String? validateEmail(String? value) {
-    if (value == null || value.isEmpty) return 'Email is required.';
-    final regex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-    if (!regex.hasMatch(value)) return 'Enter a valid email address.';
-    return null;
-  }class FormValidator {
   static String? validateEmail(
     String? value, {
     String requiredMessage = 'Email is required.',
@@ -65,7 +59,8 @@ class FormValidator {
   static String? validateUsername(
     String? value, {
     String requiredMessage = 'Username is required.',
-    String invalidMessage = 'Username must be at least 3 characters and contain only letters, numbers, or underscores.',
+    String invalidMessage =
+        'Username must be at least 3 characters and contain only letters, numbers, or underscores.',
   }) {
     if (value == null || value.isEmpty) return requiredMessage;
     final regex = RegExp(r'^[a-zA-Z0-9_]{3,}$');
@@ -73,19 +68,19 @@ class FormValidator {
     return null;
   }
 
-  static String? validateOtp(
-    String? value, {
-    int length = 6,
-    String requiredMessage = 'OTP is required.',
-    String invalidMessage = 'Enter a valid {length}-digit OTP.',
-  }) {
-    if (value == null || value.isEmpty) return requiredMessage;
-    final regex = RegExp(r'^\d{$length}$');
-    if (!regex.hasMatch(value)) {
-      return invalidMessage.replaceAll('{length}', '$length');
-    }
-    return null;
-  }
+  // static String? validateOtp(
+  //   String? value, {
+  //   int length = 6,
+  //   String requiredMessage = 'OTP is required.',
+  //   String invalidMessage = 'Enter a valid {length}-digit OTP.',
+  // }) {
+  //   if (value == null || value.isEmpty) return requiredMessage;
+  //   final regex = RegExp(r'^\d{$length}$');
+  //   if (regex.hasMatch(value)) {
+  //     return invalidMessage.replaceAll('{length}', '$length');
+  //   }
+  //   return null;
+  // }
 
   static String? validateNotEmpty(
     String? value, {
@@ -97,21 +92,4 @@ class FormValidator {
     }
     return null;
   }
-}
-
-
-  static String? validatePassword(String? value) {
-    if (value == null || value.isEmpty) return 'Password is required.';
-    if (value.length < 6) return 'Password must be at least 6 characters.';
-    return null;
-  }
-
-  static String? validatePhone(String? value) {
-    if (value == null || value.isEmpty) return 'Phone number is required.';
-    final regex = RegExp(r'^\d{10}$');
-    if (!regex.hasMatch(value)) return 'Enter a valid 10-digit phone number.';
-    return null;
-  }
-
-  // Add more validators like name, OTP, username, etc. as needed
 }

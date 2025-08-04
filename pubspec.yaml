@@ -1,8 +1,7 @@
 name: form_helper
 description: "A Dart-only validator package for common form fields like email, password, phone, etc."
 version: 0.0.1
-author: Yash Sharma imailsharma.yash@gmail.com
-homepage: 
+homepage: https://github.com/thedevyash/form_helper
 
 environment:
   sdk: ^3.5.3
