@@ -1,6 +1,6 @@
-name: form_helper
+name: forms_helper
 description: "A Dart-only validator package for common form fields like email, password, phone, etc."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/thedevyash/form_helper
 
 environment:
@@ -16,6 +16,15 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^4.0.0
 
+
+# This package supports all platforms listed below.
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

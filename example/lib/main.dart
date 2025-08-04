@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:form_helper/form_helper.dart';
+import 'package:forms_helper/form_helper.dart';
 
 void main() {
   runApp(const ValidatorDemoApp());

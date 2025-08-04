@@ -14,7 +14,6 @@ Useful in any Flutter app that uses `TextFormField`, especially in forms for log
 - Phone number  
 - Name  
 - Username  
-- OTP (custom length)  
 - Generic non-empty fields
 
 ✅ Fully customizable error messages
@@ -88,7 +87,8 @@ Error messages are localized-friendly — just pass your own messages
 
 ## Author
 
-Made with ❤️ by Yash Sharma
+Made with ❤️ by Yash Sharma.
+
 Open to contributions and feature requests.
 
 
